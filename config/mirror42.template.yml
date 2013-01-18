@@ -1,0 +1,8 @@
+development:
+  home_url: https://my_subdomain.mirror42.com
+  consumer_secret: my_consumer_secret
+  algorithm: sha512
+
+test:
+
+production:
