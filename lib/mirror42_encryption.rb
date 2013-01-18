@@ -6,8 +6,8 @@ class Mirror42Encryption
 
   class << self
 
-    # Computes a token that should be appended to the URL send to Mirror42
-    # when requesting a Mirror42 page.
+    # Creates a token that serves as the input into the client-side
+    # function Mirror42.show.
     def token(user)
       time = Time.now.to_i * 1000
       home_url + "#" + user.email + ":" + time.to_s + ":" + sha(user.email, time) + ':' + algorithm

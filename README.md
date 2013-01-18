@@ -93,7 +93,7 @@ The `Mirror42.show` `function(token, url, height, width)` accepts four parameter
 
 On the server side you need to compute the token that is going to be the input into the client-side javascript function `Mirror42.show`. _This token is not to be confused with the `apptoken` parameter that is eventually used in the source URL of the iframe._
 
-Example implementations of the algorithm are available in [ruby syntax](https://github.com/mirror42/m42ui-integration/blob/master/lib/mirror42_encryption.rb) or in [javascript node.js syntax](https://github.com/mirror42/m42ui-integration/blob/master/lib/mirror42_encryption.js).
+Example implementations of the algorithm are available in [ruby syntax](https://github.com/mirror42/m42ui-integration/blob/master/lib/mirror42_encryption.rb), in [javascript node.js syntax](https://github.com/mirror42/m42ui-integration/blob/master/lib/mirror42_encryption.js) or in [java APEX syntax](https://github.com/mirror42/m42ui-integration/blob/master/lib/mirror42_encryption.apex.java).
 
 The token is a string which is build up as follows:
 
