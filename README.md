@@ -53,7 +53,7 @@ To understand how this works it's important to realise these main architectural 
 In your webpage where you want the iframe containing Mirror42 content to appear add for example this piece of HTML code [(see also)](https://github.com/mirror42/m42ui-integration/blob/master/app/views/mirror42/dashboards.html.erb):
 
 ```
-<script src="https://github.com/mirror42/m42ui-integration/blob/master/app/assets/javascripts/mirror42-show.js"></script>
+<script src="https://raw.github.com/mirror42/m42ui-integration/master/app/assets/javascripts/mirror42-show.js"></script>
 
 <div id="mirror42"></div>
 
