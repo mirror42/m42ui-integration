@@ -1,5 +1,9 @@
 var Mirror42 = {
   show: function(token, url, height, width) {
+    if (!height) { height = "600px"; }
+    if (!width) { width = "100%"; }
+    if (/^\d+$/.test(height+'')) { height = height + 'px'; }
+    if (/^\d+$/.test(width+'')) { width = width + 'px'; }
     token = token.split('#');
     url = url.replace(/^\s+/g, '');
     if (url.indexOf('http') !== 0) {
@@ -8,8 +12,7 @@ var Mirror42 = {
     }
     url = url + (url.indexOf('?') === -1 ? "?" : "&");
     url = url + "apptoken=" + encodeURIComponent(token[1]);
-    if (!height) { height = "600px"; }
-    if (!width) { width = "100%"; }
+    url = url + "&h=" + encodeURIComponent(height);
     var m42 = document.getElementById('mirror42');
     m42.innerHTML = '<iframe class="content_embedded" frameborder="0" src="' + url + '" style="height:' + height + ';width:' + width + ';" frameborder="0" scrolling="no"></iframe>';
    }
