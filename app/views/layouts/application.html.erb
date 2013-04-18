@@ -14,10 +14,17 @@
 
 <%- else %>
 
-  <div id="masthead">
-    <h2>Mirror42 UI Integration Example</h2>
-  </div>
+  <table style='width: 100%; height: 100%;'>
+  <tr>
+    <td width='100%' colspan='2'>
+    <div id="masthead">
+      <h2>Mirror42 UI Integration Example</h2>
+    </div>
+    </td>
+  </tr>
 
+  <tr>
+  <td valign='top' width='18%'>
   <div id="menu">
     <a href="/products">My Application</a>
     <a href="/mirror42/scorecards">Scorecards</a>
@@ -25,15 +32,18 @@
     <a href="/mirror42/dashboards?iframe=1">iDashboards</a>
     <a href="/mirror42/messages">Messages</a>
   </div>
-
+  </td>
+  <td valign='top' width='82%' style='height: 100%;'>
   <div id="content">
     <%- if params[:iframe] %>
-      <iframe src="<%= request.path %>?framed=1" frameborder="0" style="height:2000px;width:100%;" scrolling="no">
+      <iframe src="<%= request.path %>?framed=1" frameborder="0" style="height:100%;width:100%;" scrolling="yes">
     <%- else %>
       <%= yield %>
     <%- end %>
   </div>
-
+  </td>
+  </tr>
+  </table>
 <%- end %>
 
 </body>

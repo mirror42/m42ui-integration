@@ -29,20 +29,23 @@ html, body {
 }
 
 #menu {
-    position:absolute;
+    /* position:absolute;
     top: 51px;
-    left: 0;
     bottom: 0;
+    */
+    left: 0;
     width: 150px;
     border-right: 1px solid #ccc;
     padding-top: 10px;
 }
 
 #content {
+  /*
     position:absolute;
     top: 51px;
-    left: 151px;
     bottom: 0;
+    left: 151px;
+    */
     right: 0;
     padding: 15px;
     height: 100%;
