@@ -16,10 +16,11 @@ Mirror42.show = function(token, url, height, width) {
   url = url + (url.indexOf('?') === -1 ? "?" : "&");
   url = url + "apptoken=" + encodeURIComponent(token[1]);
   url = url + "&h=" + encodeURIComponent(height);
-  url = url + "&embed=1";
+  // url = url + "&embed=1";
+  url = url + "&embedinframe=1";
   var m42 = document.getElementById('mirror42');
   if (url.indexOf('/dashboards') === -1) {
-    m42.innerHTML = '<iframe class="content_embedded" frameborder="0" src="' + url + '" style="height:' + height + ';width:' + width + ';" frameborder="0" scrolling="no"></iframe>';
+    m42.innerHTML = '<iframe class="content_embedded" src="' + url + '" style="height:' + height + ';width:' + width + ';" frameborder="0" scrolling="no"></iframe>';
   } else {
     m42.innerHTML = '<div id="m42embed" style="width:' + width + ';height:' + height + ';margin:0 auto;"></div>';
     window.M42Embed = {container:'m42embed', home: home_url, path: url};

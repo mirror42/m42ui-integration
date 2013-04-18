@@ -8,20 +8,33 @@
 </head>
 <body>
 
-<div id="masthead">
-  <h2>Mirror42 UI Integration Example</h2>
-</div>
+<%- if params[:framed] %>
 
-<div id="menu">
-  <a href="/products">My Application</a>
-  <a href="/mirror42/scorecards">Scorecards</a>
-  <a href="/mirror42/dashboards">Dashboards</a>
-  <a href="/mirror42/messages">Messages</a>
-</div>
-
-<div id="content">
   <%= yield %>
-</div>
+
+<%- else %>
+
+  <div id="masthead">
+    <h2>Mirror42 UI Integration Example</h2>
+  </div>
+
+  <div id="menu">
+    <a href="/products">My Application</a>
+    <a href="/mirror42/scorecards">Scorecards</a>
+    <a href="/mirror42/dashboards">Dashboards</a>
+    <a href="/mirror42/dashboards?iframe=1">iDashboards</a>
+    <a href="/mirror42/messages">Messages</a>
+  </div>
+
+  <div id="content">
+    <%- if params[:iframe] %>
+      <iframe src="<%= request.path %>?framed=1" frameborder="0" style="height:2000px;width:100%;" scrolling="no">
+    <%- else %>
+      <%= yield %>
+    <%- end %>
+  </div>
+
+<%- end %>
 
 </body>
 </html>
